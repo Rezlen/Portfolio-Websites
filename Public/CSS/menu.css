@@ -1,0 +1,190 @@
+
+/* convert all "UL" to FLEX box then place them far right "FLEX END". "List Style" removes the BULLET circle */
+.nav-list {
+  box-sizing: border-box;
+  background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%,rgb(255, 19, 120) 0%,
+    rgb(0, 0, 0) 90.5%);
+  list-style: none;
+  box-shadow: 0px 0px 10px;
+  display: flex;/**/
+  flex-wrap: wrap;/**/
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;/*This hides the menu in small screen then JavaScript activates them by adding class ACTIVATE to the menu so it displays/ACtIVATE the menu*/ 
+  margin-top: 0.5rem;
+}
+.nav-item.active {
+  display: block; /*JavaScript adds the class ACTIVATE to display the menu as BLOCK on small screens*/
+}
+
+.button.Secondary {
+  border-bottom: 1px rgb(34, 202, 28) solid;
+}
+
+.toggle {
+  cursor: pointer;
+  order: 1;
+  margin-top: 0.6rem;
+  margin-right: 0.5rem;
+  color: white;
+}
+
+.button { /*This positions is the class owner on a specific position; Causes the other menu other than SIGNUP SIGNIN sits on different position */
+  order: 2;
+}
+
+/*This creates the bar for the toggle element for responsive view
+If you remove the whole BARS css, the word menu stays there and still does the menu work beautifully,
+so the THREE bars are not necessary*/
+.bars {
+  background: green;
+  display: inline-block;
+  height: 2px;
+  width: 1rem;
+  position: relative;
+}
+
+.bars::before,.bars::after {
+  background: green;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 3px;
+  width: 1rem;
+}
+.bars::before {
+  top: -0.7rem;
+}
+.bars::after {
+  top: -0.35rem;
+} /*The THREE Toggles bar is here*/
+
+/* "Text Decoration" removes the underline the bullet point */
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* This gives the background color & bigger padding when hovers*/
+.nav-item a:hover {
+  transition: .5s;
+  background: #ffee10;
+  color: black;
+  box-shadow: 0 0 1rem #ffee10;
+  border-radius: 50%;
+  padding: 0.5rem;
+  text-shadow: #4ca04c;
+}
+
+
+/*=================
+Starts Tablet/Mobile Display CSS
+===============*/
+
+@media all and (min-width: 29rem) {
+  .nav-item {
+    justify-content: center;
+  }
+  .nav-item1 {
+    flex: 1;
+  }
+  .nav-item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+  .toggle {
+    order: 2;
+  }
+  .button.secondary {
+    border: 0;
+  }
+  .button a {
+    padding: 0.5rem 1rem;
+  }
+
+} 
+
+/*=================
+Ends Tablet/Mobile Display CSS
+===============*/
+
+/*=================
+Starts Desktops Display CSS
+===============*/
+
+@media all and (min-width: 48rem) {
+  .nav-item {
+    display: block;
+    width: auto;
+  }
+  .toggle {
+    display: none;
+  }
+  .logo {
+    order: 0;
+  }
+  .nav-item {
+    order: 1;
+  }
+  .button {
+    order: 2;
+  }
+  .nav-list li {
+    padding: 0.5rem 0.8rem;
+  }
+  .YourProjectsHere p {
+    text-decoration: underline;
+  }
+}
+
+/*=================
+Ends Desktops Display CSS
+===============*/
+
+/* place the first "LI" on different position
+.nav-item1 {
+  margin-right: auto;
+}
+/* place the first child on different position
+.nav-item:first-child {
+  margin-right: auto;
+}
+*/
+
+/* SPAN tooltip: As well as adding simple title like; "title="Find Out About Us Here""to the line of the WORDING, you can create tooltip this way:
+In some situation also, you can use  - data-tooltip= "Hello -
+.nav-list .TooltipContent {
+  visibility: hidden;
+}
+/*
+Another TOOLTIP Structure is using ::before ::after PSEUDO elements like: */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  margin-top: 0.05rem;
+  padding: 0.5rem;
+  background-color: #b4babb;
+  border-radius: 0.5rem;
+}
+
+/*
+.nav-item:hover .TooltipContent {
+  visibility: visible;
+}
+*/

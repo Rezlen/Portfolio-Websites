@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Portfolio Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/aboutMe.css">
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/menu.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
+    <link rel="shortcut icon" href="images/Rez-Pic.jpg" type="image/x-icon">
+    <!--Start Script is for Mobile menu display-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    
+    <script>
+      $(function() {
+        $(".toggle").on("click", function(){
+          if($(".nav-item").hasClass("active")){
+              $(".nav-item").removeClass("active");
+          }
+          else{
+            $(".nav-item").addClass("active");
+          }
+        })
+      });
+    </script> <!--Ends Script is for Mobile menu display-->
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item1"><a href= 'index.html'><img  src= '/Public/images/Rez-Pic.jpg'></a></li>
+          <li class="nav-item"><a href= "index.html"  title="Find Out About All Businesses Here">Home</a></li>
+          <!--TITLE acts as a tooltip HOWEVER; <span class= "TooltipContent" >Tooltip text</span> a kind of tooltip is SPAN tooltip, check the css page's explanation-->
+          <li class="nav-item" data-tooltip="See Project Portfolios Here" ><a href= "portfolioProjects.html" >Portfolio Projects</a></li>
+          <li class="nav-item"><a href= "aboutMe.html">About Me</a></li> <!--Adding TITLE here helps you create TOOLTIP-->
+          
+          <li class="nav-item button"><a href= "/Public/Social-Log/signIN.html" >Login</a></li>          
+          <li class="nav-item button Secondary"><a href="/Public/Social-Log/Registration/registration.html">Register</a></li>
+
+          <li class="toggle"><span class="bars"></span>Menu</li>
+        </ul>
+      </nav>
+    </header>   
+
+    <!--Bottom Section Area For Team Members display-->
+    <div class="BusinessTeam">
+      <div>
+        <img src="images/staff/RezSo.png" title="Team1ImageTooltip" alt="Team1Image">
+        <h3>Rez So</h3>
+      </div>
+      <div class ="BusinessTeamContent">
+        <h2>Junior FullStack WebDeveloper, Fully Ready For Your Tasks & Projects</h2>
+        <p>Possesses 10+ years of IT, Website, and business knowledge, experience, and designing any website's full life cycle. 
+          1+ year professional web-development experience & study. 
+          Core technical skills include React.JS, Redux, Routes, Node, Git, CSS with full Stripe Payment, Google's Firebase, integrated FireStore RealTime DB,
+          NoSQL, APIs, HTTP requests with Axios, STATEs, Widgets, user Authentication & Authorization, fully components based
+          reusable functions.
+        </p>
+
+        <h4> Other Skills</h4>
+        <ul>
+          <li> Full Stack Development Strategic (Junior)</li>
+          <li>Front & Back End Development </li>
+          <li>Sales Knowledge</li>        
+          <li>Google Analytics; Google APIs; Google ADs, Google Search, Google Business; Google Cloud, Google Workspaces; Google AdSense. </li>
+          <li>Exceptional Communication Skills </li>
+          <li>Advance Microsoft Office, Excel </li>
+          <li>Quality Assurance and Control </li>
+          <li>Advance project Management Skills </li>
+          <li>Great Leadership Skills, Relationship Management, Analysts, Team Leadership, Solution Advice, Presentation Management, Efficient Delivery, Communication, Strategic Planning, Creative Managements.</li>
+      </ul>  
+      </p>
+        <h4> Education</h4>
+        <p>
+          Bachelor Business Management Diploma.	Kings College London 2018
+        </p>
+
+      </div>
+      <!--<a href="https://www.google.com/">
+        <div>
+          <img src="images/staff/Employee2.png" title="Team2ImageTooltip" alt="Team2Image">
+          <h3> Pls Ask</h3>
+        </div>
+      </a>
+      <a href="https://www.google.com/">
+        <div>
+          <img src="images/staff/employee-two.webp" title="Team3ImageTooltip" alt="Team3Image">
+          <h3> Team 3</h3>
+        </div>
+      </a>-->
+    </div>  
+
+    <!--Bottom Section Area For ContactUs FORM, Map, Address Display-->
+    <div class="ContactDetails">
+      <div>
+        <p>Fill The Form Below To Contact Me. We Get Back To You In Less Than 24hrs</p>
+        <!--ContactUs FORM from here-->
+        <form  method="get" action="https://submit-form.com/VlSB85Xy">
+          <input class="field"  required="yes" type="text" name="First Name field">
+          <label class="label-field" required="yes" alt="First Name Section" placeholder="First Name"></label>
+          <!--/*The word for "alt" sits as the placeholder then if anything typed, the actual PLACEHOLDER moves on the field's line-->
+          
+          <input class="field"  required="yes" type="text" name="Last Name field">
+          <label class="label-field" required="yes" alt="Last Name Section" placeholder="Last Name"></label>
+         
+          <input class="field"  required="yes" type="text" name="Email Address field">
+          <label class="label-field" required="yes" alt="Email Address Section" placeholder="Email Address"></label>     
+          
+          <textarea class="field CommentFiled"  required="yes" type="text" name="Comment field"></textarea>
+          <label  class=" label-field" id="CommentLabel"  required="yes" alt="Comment Section" placeholder="Comment"></label> 
+          <button class="FormSubmitBTN" type="submit">Submit</button>
+
+        </form>
+        <!--ContactUs FORM until here-->
+      </div>
+      <p>WeWork Moorgate, 1 Fore Street, London, EC2Y 5EJ <br>Whatsapp, Phone, Telegram, Instagram: (0044)7591020664</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.739362939668!2d-0.09248803422963602!3d51.51799752963689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761caba849ec05%3A0x781a75c80a30bd1!2sFore%20St%2C%20London%20EC2Y%205EJ!5e0!3m2!1sen!2suk!4v1648219306618!5m2!1sen!2suk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="footerClass">
+      <footer>All Rights Reserved @2023</footer>
+    </div>
+  </body>
+  <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+</html>
+

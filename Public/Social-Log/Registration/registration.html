@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Portfolio Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/menu.css">
+    <link rel="stylesheet" type="text/css" href="registration.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
+    <link rel="shortcut icon" href="/Public/images/Rez-Pic.jpg" type="image/x-icon">
+    <!--Start Script is for Mobile menu display-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      // $(function() { ... }); is just jQuery short - hand for $(document).ready(function () { ... }); What it's designed to do (amongst other things) is ensure that your function is called once all the DOM elements of the page are ready to be used.
+      $(function () {
+        $(".toggle").on("click", function () {
+          if ($(".nav-item").hasClass("active")) {
+            $(".nav-item").removeClass("active");
+          }
+          else {
+            $(".nav-item").addClass("active");
+          }
+        })
+      });
+    </script> <!--Ends Script is for Mobile menu display-->
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item1"><a href='/Public/index.html'><img src='/Public/images/Rez-Pic.jpg'></a></li>
+          <li class="nav-item"><a href='/Public/index.html' title="Find Out About All Businesses Here">Home</a></li>
+          <!--TITLE acts as a tooltip HOWEVER; <span class= "TooltipContent" >Tooltip text</span> a kind of tooltip is SPAN tooltip, check the css page's explanation-->
+          <li class="nav-item" data-tooltip="See Project Portfolios Here"><a href="/Public/portfolioProjects.html">Portfolio Projects</a></li>
+          <li class="nav-item"><a href="/Public/aboutMe.html">About Me</a></li>
+          <!--Adding TITLE here helps you create TOOLTIP-->
+          <li class="nav-item button"><a href="/Public/Social-Log/signIN.html">Login</a></li>
+          <li class="nav-item button Secondary"><a href="/Public/Social-Log/Registration/registration.html">Register</a></li>
+          <li class="toggle"><span class="bars"></span>Menu</li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <div class="container">
+
+        <div class="row">
+          <h2>Register with Social Media or Manually</h2>
+          <div class="vl">
+            <span class="vl-innertext">or</span>
+          </div>
+
+          <div class="col">
+            <a href="#" class="fb btn">
+              <i class="fa fa-facebook fa-fw"></i> Register with Facebook
+            </a>
+            <a href="#" class="twitter btn">
+              <i class="fa fa-twitter fa-fw"></i> Register with Twitter
+            </a>
+            <a href="#" class="google btn">
+              <i class="fa fa-google fa-fw"></i> Register with Google+
+            </a>
+          </div>
+
+          <div class="col">
+            <div class="hide-md-lg">
+              <p>Or register manually:</p>
+            </div>
+          
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password Min 6 Char" required>
+            <button onclick="register()"> Register</button>
+          </div>
+
+        </div>
+
+    </div>
+
+    <div class="bottom-container">
+      <div class="row">
+        <div class="col">
+          <a href="/Public/Social-Log/signIN.html" class="btn" >Login</a>
+        </div>
+        <div class="col">
+          <a href="#" class="btn">Forgot password?</a>
+        </div>
+      </div>
+    </div>
+  </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    
+    <!-- Our script must be loaded after firebase references -->
+    <script src="script.js"></script>
+</html>

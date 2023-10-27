@@ -1,0 +1,215 @@
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: white;
+  
+}
+
+.nav-item1 img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+/** {
+  border: red 0.25px dotted; 
+} */
+
+/*The Menu bar is place in menu.css file in css folder*/
+
+
+
+h2 {
+  text-align: center;
+}
+
+
+/*Puts Business Team Members section in order*/
+.BusinessTeam {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(241, 247, 235);
+  box-shadow: 0px 0px 10px;
+  margin: 2rem;
+}
+
+
+/*Limits the Team member images*/
+.BusinessTeam img {
+  height: 20rem;
+  width: auto;
+  margin: 0rem 1rem;
+  border-radius: 1rem;
+}
+
+/*========================To display the Map Iframe-Address- Contact Details*/
+.ContactDetails {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  width: auto;
+  margin: 2rem;
+  box-shadow: 0px 0px 10px;
+  background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%); /*linear-gradient makes the colours beautiful */
+}
+
+.BusinessTeamContent {
+ margin: 2rem;
+}
+
+.BusinessTeamContent ul li {
+  text-align: left;
+}
+
+.BusinessTeamContent ol li {
+  text-align: left;
+  font-weight: bold;
+}
+
+
+
+/*=======================From here Contact us FORM with the animation movement of PlaceHolder*/
+form {
+  margin: 1rem;
+}
+
+.field {
+  box-sizing: border-box;/**/
+  width: 20rem;
+  height: 2.5rem; /*Changing the height of the fields*/
+  margin: 0;
+  padding: 1rem; /*Changing the TYPING PLACE padding inside the fields*/
+  border: 1px solid #ccc;
+  border-radius: 1.5rem;
+  background: #fff;
+  resize: none;
+  outline: none;
+}
+
+.label-field {
+  display: flex; /**/
+  pointer-events: none;
+  line-height: 1.25em;
+  margin: -2rem 2rem 1rem; /*Adjusts the placeholder word in middle of the field*/
+  width: 10rem;
+}
+
+.field:focus {  /*Changing the border color*/
+  border-color: #00bafa;
+}
+
+.field:focus + .label-field::before { /*Changing the font color*/
+  color: #00bafa;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.field:focus + .label-field:before,
+.field:valid + .label-field:before {
+  transition-duration: 0.2s; /*Adjust the placeholder's 'speed' moving up to it's field's line*/
+  transform: translate(0, -1.1rem) scale(0.9, 0.9); /*The SCALE, changes the placeholder 'word' height or width when moves on the field's line*/
+/*The TRANSLATE; adjust the amount of movement of the placeholder to go up/down; after entering a content.*/
+}
+
+.label-field:before {
+  content: attr(placeholder);
+  color: #898989; /*Changing the placeholder's font-color*/
+  transition: 0.3s ease-in-out;  /*Adjust the placeholder's 'speed' coming back to it's field*/
+  background-image: linear-gradient(to bottom, #fff, #fff); /*Center of the placeholder word coloring*/
+  background-size:100% 2rem;
+  background-repeat: no-repeat;/*Avoids unnecessarily background color under the PLACEHOLDER WORD*/
+  background-position: center; /*Places a background color under the placeholder, when moves up/down on the field's line*/
+  border-radius: 0.2rem;
+}
+/* Until here; Contact us form with the animation movement of PlaceHolder*/
+
+.FormSubmitBTN {
+  background-color: #00bafa;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 1rem;
+}
+
+.FormSubmitBTN:hover {
+  background-color: rgb(72, 37, 228);
+}
+
+.CommentFiled {
+  height: 7rem;
+}
+
+#CommentLabel {
+  transform: translate(0, -4.8rem) scale(0.9, 0.9); 
+}
+
+/*============================================Footer area with London's Image*/
+footer {
+  display: flex;
+  align-items: flex-start;
+  background-image: url("../images/footer-copy.png");
+  height: 20rem; /* set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+footer, p {
+  font-size: 0.9rem;
+  margin: 0.5rem;
+}
+
+.ContactDetails p {
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+iframe {
+  border-radius: 1rem;
+}
+
+/*For Mobile Display*/
+@media only screen and (max-width: 600px) {
+
+  body, html {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+    
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ImageCoverHome {
+    height: 100%;
+  }
+
+}
+
+@media only screen and (min-width: 12rem) {
+
+  body,
+  html {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+/*
+dig http://portfolio-projects.rezasoheily.co.uk/ +nostats +nocomments +nocmd
+    > ;http://portfolio-projects.rezasoheily.co.uk/.                     IN      A
+    > http://portfolio-projects.rezasoheily.co.uk/.              3592    IN      CNAME   rezlen.github.io.
+    > rezlen.github.io.      43192   IN      CNAME    GITHUB-PAGES-SERVER .
+    >  GITHUB-PAGES-SERVER .         22      IN      A       192.0.2.1
+*/

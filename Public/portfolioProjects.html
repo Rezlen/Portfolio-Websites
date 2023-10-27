@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Portfolio Website</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="CSS/menu.css">
+        <link rel="stylesheet" type="text/css" href="CSS/portfolioProjects.css">
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
+        <link rel="shortcut icon" href="images/Rez-Pic.jpg" type="image/x-icon">
+        <!--Start Script is for Mobile menu display-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+        $(function() {
+            $(".toggle").on("click", function(){
+            if($(".nav-item").hasClass("active")){
+                $(".nav-item").removeClass("active");
+            }
+            else{
+                $(".nav-item").addClass("active");
+            }
+            })
+        });
+        </script> <!--Ends Script is for Mobile menu display-->
+    </head>
+
+    <body>
+      <header>
+        <nav>
+          <ul class="nav-list">
+            <li class="nav-item1"><a href= 'index.html'><img  src= 'images/Rez-Pic.jpg'></a></li>
+            <li class="nav-item"><a href= "index.html"  title="Find Out About All Businesses Here">Home</a></li>
+            <!--TITLE acts as a tooltip HOWEVER; <span class= "TooltipContent" >Tooltip text</span> a kind of tooltip is SPAN tooltip, check the css page's explanation-->
+            <li class="nav-item" data-tooltip="See Project Portfolios Here" ><a href= "portfolioProjects.html" >Portfolio Projects</a></li>
+            <li class="nav-item"><a href= "aboutMe.html">About Me</a></li> <!--Adding TITLE here helps you create TOOLTIP-->
+            
+            <li class="nav-item button"><a href= "/Public/Social-Log/signIN.html" >Login</a></li>          
+            <li class="nav-item button Secondary"><a href= "/Public/Social-Log/Registration/registration.html">Register</a></li>
+            <li class="toggle"><span class="bars"></span>Menu</li>
+          </ul>
+        </nav>
+      </header>   
+
+      <div class="YourProjectsHere">
+
+
+        <div class="Projects">
+          <div><h3> Demonstrating Advance JavaScript function </h3></div>
+          <div><a href="https://rezlen.github.io/numberGusserGame/" target="_blank">
+          <img src="images/numberGusserGame.png" title="Service2ImageTooltip" alt="Service1Image2">
+          </a></div>
+          <div><p> A game of guessing numbers & algorithms</p></div>
+        </div>
+        
+        <div class="Projects">
+          <div><h3>Mobile Responsive Tsunami Coffee</h3></div>
+          <div><a href="https://rezlen.github.io/TsunamiCoffeeResponsive/" target="_blank">
+          <img src="images/TsunamiCoffee.png" title="Service2ImageTooltip" alt="Service1Image2">
+          </a></div>
+          <div><p> Mobile Friendly Coffee Shop Website </p></div>
+        </div>
+
+
+        <div class="Projects">
+          <div><h3> Random Message Display. Demonstrating Advance JavaScript function </h3></div>
+          <div><a href="https://rezlen.github.io/Mixed-Messages/" target="_blank">
+          <img src="images/Mixed-Messages.png" title="Service2ImageTooltip" alt="Service1Image2">
+          </a></div>
+          <div><p> Displaying random messages from an array </p></div>
+        </div>
+
+        <div class="Projects">
+          <div><h3> Mobile Responsive Gallery Website</h3></div>
+          <div><a href="https://rezlen.github.io/DeviceResponsive/" target="_blank">
+          <img src="images/GalleryWebsite.png" title="Service3ImageTooltip" alt="Service1Image4">
+          </a></div>
+          <div><p>Best galley responsive website in HTML & CSS</p></div>
+        </div>
+
+        <div class="Projects">
+          <div><h3> Piano Practice page. Demonstrating Advance JavaScript function </h3></div>
+          <div><a href="https://rezlen.github.io/PianoNotePlay/" target="_blank">
+          <img src="images/PianoNotePlao.png" title="Service2ImageTooltip" alt="Service1Image2">
+          </a></div>
+          <p> Creating Songs & Music using JavaScript</p>
+        </div>
+    
+        <div class="Projects">
+          <div><h3> Mobile Fast Responsive Blog Website</h3></div>
+          <div><a href="https://rezlen.github.io/RelativeMeasurements/" target="_blank">
+          <img src="images/ResponsiveBlog.png" title="Service3ImageTooltip" alt="Service1Image4">
+          </a></div>
+          <div><p>A very fast blog responsive website in HTML & CSS</p></div>
+        </div>
+
+        <div class="Projects">
+          <div><h3> Mobile Responsive Shop Website</h3></div>
+          <div><a href="https://rezlen.github.io/TheTeaCosy/" target="_blank">
+          <img src="images/TheTeaCosy.png" title="Service3ImageTooltip" alt="Service1Image4">
+          </a></div>
+          <div><p>A very responsive website for shops in HTML & CSS</p></div>
+        </div>
+
+        <div class="Projects">
+            <div><h3> Advance Grid Example</h3></div>
+            <div><a href="https://rezlen.github.io/GridTaskBoard" target="_blank">
+            <img src="images/GridTaskBoard.png" title="Service3ImageTooltip" alt="Service1Image4">
+            </a></div>
+            <div><p>Demonstrating a advance grid structure capabilities</p></div>
+        </div>
+
+      </div>
+
+      <div class="footerClass">
+        <footer>All Rights Reserved @2023</footer>
+      </div>
+    </body>
+  <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+</html>
+
+

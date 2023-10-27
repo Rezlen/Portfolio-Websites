@@ -1,0 +1,292 @@
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: white;
+}
+.nav-item1 img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+/** {
+  border: red 0.25px dotted; 
+} */
+
+/*The Menu bar is place in menu.css file in css folder*/
+
+/* Home Cover Image Section */
+.ImageCoverHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-image: url("https: //main--ts-particles-background.netlify.app/"); */
+  background-color: #cccccc; /*Used if the image is unavailable */
+  height: 15rem; /* set a specified height
+  /*background-position: center; /* Center the image */
+  /*background-repeat: no-repeat; /* Do not repeat the image */
+ /*background-size: cover; /*Resize the background image to cover the entire container */
+  width: 100%;
+  color: aliceblue;
+}
+
+.Iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: relative;
+}
+
+.ImageCoverHome h1 {
+  font-size: 3rem;
+  text-align: center;
+  position: absolute;
+}
+
+
+/* Portfolio Borders % size*/
+.Projects4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.2rem solid #898989;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.Projects4:hover {
+  box-shadow: 0.5rem 0.5rem 1rem rgb(231, 157, 46);
+  animation: heartbeat 1.25s infinite;
+}
+
+
+/* displaying the heart beat effect on images */
+@keyframes heartbeat {
+  0% { transform: scale(1);}
+  10%{ transform: scale(1.2);}
+  25% { transform: scale(1.1);}
+  35% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+
+h2 {
+  text-align: center;
+}
+
+/*Puts everything in order*/
+.YourProjectsHere {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: rgb(241, 247, 235);
+  box-shadow: 0px 0px 10px;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+.Iframe2 {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+}
+
+.YourProjectsHere p {
+  text-decoration: none;
+  width: 15rem;
+}
+
+/*Limits the images*/
+.YourProjectsHere img {
+  height: 20rem;
+  width: auto;
+}
+
+/* having GIF fire effect on the Team section of the HOME page. */
+.BusinessTeam :hover {
+  background-image: url("../images/fire-gif-transparent.gif");
+  background-size: contain;
+  transform: scaleY(1);
+  transition: transform 0.9s ease, opacity 0.9s ease-out;
+}
+
+/*Puts Business Team Members section in order*/
+.BusinessTeam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(241, 247, 235);
+  box-shadow: 0px 0px 10px;
+}
+
+.BusinessTeam a {
+  text-decoration: none;
+}
+
+/*Limits the Team member images*/
+.BusinessTeam img {
+  height: 20rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(231, 157, 46); /* Box Shadow customizations (box-shadow: h-offset v-offset | blur, spread, )+INSET (for adversing) | box-shadow: 25px 15px 10px 10px red inset; */
+}
+
+/*To display the Map Iframe-Address- Contact Details*/
+.ContactDetails {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  width: auto;
+  margin: 2rem;
+  box-shadow: 0px 0px 10px;
+  background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+      linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+      linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+
+
+/*From here Contact us form with the animation movement of PlaceHolder*/
+form {
+  margin: 1rem;
+}
+
+.field {
+  box-sizing: border-box;/**/
+  width: 20rem;
+  height: 2.5rem; /*Changing the height of the fields*/
+  margin: 0;
+  padding: 1rem; /*Changing the TYPING PLACE padding inside the fields*/
+  border: 1px solid #ccc;
+  border-radius: 1.5rem;
+  background: #fff;
+  resize: none;
+  outline: none;
+}
+
+.label-field {
+  display: flex; /**/
+  pointer-events: none;
+  line-height: 1.25em;
+  margin: -2rem 2rem 1rem; /*Adjusts the placeholder word in middle of the field*/
+  width: 10rem;
+}
+
+.field:focus+.label-field::before {
+  /*Changing the font color*/
+  color: #00bafa;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.field:focus+.label-field:before,
+.field:valid+.label-field:before {
+  transition-duration: 0.2s;
+  /*Adjust the placeholder's 'speed' moving up to it's field's line*/
+  transform: translate(0, -1.1rem) scale(0.9, 0.9);
+  /*The SCALE, changes the placeholder 'word' height or width when moves on the field's line*/
+  /*The TRANSLATE; adjust the amount of movement of the placeholder to go up/down; after entering a content.*/
+}
+
+.label-field:before {
+  content: attr(placeholder);
+  color: #898989;
+  /*Changing the placeholder's font-color*/
+  transition: 0.3s ease-in-out;
+  /*Adjust the placeholder's 'speed' coming back to it's field*/
+  background-image: linear-gradient(to bottom, #fff, #fff);
+  /*Center of the placeholder word coloring*/
+  background-size: 100% 2rem;
+  background-repeat: no-repeat;
+  /*Avoids unnecessarily background color under the PLACEHOLDER WORD*/
+  background-position: center;
+  /*Places a background color under the placeholder, when moves up/down on the field's line*/
+  border-radius: 0.2rem;
+}
+/* Until here; Contact us form with the animation movement of PlaceHolder*/
+
+.FormSubmitBTN {
+  background-color: #00bafa;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 1rem;
+}
+
+.FormSubmitBTN:hover {
+  background-color: rgb(72, 37, 228);
+}
+
+.CommentFiled {
+  height: 7rem;
+}
+
+#CommentLabel {
+  transform: translate(0, -4.8rem) scale(0.9, 0.9); 
+}
+
+/*Footer area with London's Image*/
+.footerClass {
+  display: flex;
+  align-items: flex-start;
+  background-image: url("../images/footer-copy.png");
+  height: 20rem; /* set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+footer, p {
+  font-size: 0.9rem;
+  margin: 0.5rem;
+}
+
+/*For Mobile Display*/
+@media only screen and (max-width: 600px) {
+  body, html {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ImageCoverHome {
+    height: 100%;
+  }
+
+
+}
+
+@media only screen and (min-width: 12rem) {
+  body, html {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .ImageCoverHome h1 {
+    font-size: 200%;
+  }
+
+  .YourProjectsHere {
+    position: relative;
+  }
+
+  .Iframe2 {
+    position: absolute;
+  }
+
+}
