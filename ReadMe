@@ -1,0 +1,22 @@
+
+
+
+SweetAlert Library has been used for better alert boxes swal instead of ALERTs
+<!-- SweetAlert Script for nice popups https://sweetalert.js.org/-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+A nice Gradient affect has been used for Buttons at buttons.css
+
+Project is hosted on Github but Github do not display Login/out or signup pages that is why the project is also hosted on NETLIFY with my own domain; https://app.netlify.com/teams/rezlen/overview https://rezasoheily.co.uk/
+SignIn/Up authentication & database is hosted on Google's FireBase
+
+Jquery has been used for Menu Toggle/ mobile etc.
+
+Two Iframe to of Moving particles at the background has been used are;  
+https://moving-ts-particles.netlify.app/
+https://ts-particles-background.netlify.app
+
+
+
+
+
