@@ -28,7 +28,7 @@ function register() {
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert("Email or Password is Outta Line!!");
+    alert("Email or Password is NOT Correct!!");
     return;
     // Don't continue running the code
   }
@@ -59,7 +59,7 @@ function register() {
       database_ref.child("users/" + user.uid).set(user_data);
 
       // DOne
-      alert("User Created!!");
+      alert("Thank you, Your Account Created!!");
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
@@ -78,7 +78,7 @@ function login() {
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert("Email or Password is Outta Line!!");
+    alert("Email or Password is NOT Correct!!");
     return;
     // Don't continue running the code
   }
@@ -101,7 +101,7 @@ function login() {
       database_ref.child("users/" + user.uid).update(user_data);
 
       // DOne
-      alert("User Logged In!!");
+      alert("You are Logged-In Now!!");
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
