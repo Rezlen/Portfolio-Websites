@@ -28,12 +28,12 @@ function register() {
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert("Email or Password is Outta Line!!");
+    swal("Email or Password is NOT Correct!!");
     return;
     // Don't continue running the code
   }
   if (validate_field(firstName) == false || validate_field(lastName) == false) {
-    alert("One or More Extra Fields is Outta Line!!");
+    swal("One or More Extra Fields is Outta Line!!");
     return;
   }
 
@@ -58,8 +58,8 @@ function register() {
       // Push to Firebase Database
       database_ref.child("users/" + user.uid).set(user_data);
 
-      // DOne
-      alert("User Created!!");
+      // Done. Instead of ALERT popup SweetAlert "swal" Has been used, 
+      swal({text: "Thank you, Your Account Created!!", icon: "success", timer: 3000 });
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
@@ -78,7 +78,7 @@ function login() {
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert("Email or Password is Outta Line!!");
+    swal("Email or Password is NOT Correct!!");
     return;
     // Don't continue running the code
   }
@@ -101,14 +101,14 @@ function login() {
       database_ref.child("users/" + user.uid).update(user_data);
 
       // DOne
-      alert("User Logged In!!");
+      swal({text: "You are Logged-In Now!!", icon: "success", timer: 3000})
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
       var error_code = error.code;
       var error_message = error.message;
 
-      alert(error_message, error_code);
+      swal(error_message, error_code);
     });
 }
 

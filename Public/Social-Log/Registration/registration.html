@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/Public/CSS/style.css">
     <link rel="stylesheet" type="text/css" href="/Public/CSS/menu.css">
     <link rel="stylesheet" type="text/css" href="registration.css">
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/buttons.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
     <link rel="shortcut icon" href="/Public/images/Rez-Pic.jpg" type="image/x-icon">
     <!--Start Script is for Mobile menu display-->
@@ -75,7 +76,10 @@
             <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="password" id="password" name="password" placeholder="Password Min 6 Char" required>
-            <button onclick="register()"> Register</button>
+            <div class="stage"></div>
+            <button class="btngradient" onclick="register()"> Register</button>
+            </div>
+
           </div>
 
         </div>
@@ -99,7 +103,8 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    
+    <!-- SweetAlert Script for nice popups https://sweetalert.js.org/-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Our script must be loaded after firebase references -->
     <script src="script.js"></script>
 </html>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="signIN.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/buttons.css">
     <link rel="scripts" type="js" href="index.js">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
     <link rel="shortcut icon" href="../images/Rez-Pic.jpg" type="image/x-icon">
@@ -75,7 +76,7 @@
 
             <input type="password" id="password" name="password" placeholder="Password Min 6 Char" required>
 
-            <button onclick="login()"> Login</button>
+            <button class="btngradient" onclick="login()"> Login</button>
           </div>
 
         </div>
@@ -98,10 +99,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     
     <!-- TODO: Add SDKs for Firebase products that you want to use
-                 https://firebase.google.com/docs/web/setup#available-libraries -->
+    https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    
+    <!-- SweetAlert Script for nice popups https://sweetalert.js.org/-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Our script must be loaded after firebase references -->
-    <script src="script.js"></script>
+    <script src="/Public/Social-Log/Registration/script.js"></script>
 </html>
