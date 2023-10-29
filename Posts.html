@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/Public/CSS/style.css">
     <link rel="stylesheet" type="text/css" href="/Public/CSS/menu.css">
-    <link rel="stylesheet" type="text/css" href="registration.css">
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/Posts.css">
     <link rel="stylesheet" type="text/css" href="/Public/CSS/buttons.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
     <link rel="shortcut icon" href="/Public/images/Rez-Pic.jpg" type="image/x-icon">
@@ -36,66 +36,29 @@
           <li class="nav-item1"><a href='/index.html'><img src='/Public/images/Rez-Pic.jpg'></a></li>
           <li class="nav-item"><a href='/index.html' title="Find Out About All Businesses Here">Home</a></li>
           <!--TITLE acts as a tooltip HOWEVER; <span class= "TooltipContent" >Tooltip text</span> a kind of tooltip is SPAN tooltip, check the css page's explanation-->
-          <li class="nav-item" data-tooltip="See Project Portfolios Here"><a href="/portfolioProjects.html">Portfolio Projects</a></li>
+          <li class="nav-item" data-tooltip="See Project Portfolios Here"><a href="/portfolioProjects.html">Portfolio
+              Projects</a></li>
           <li class="nav-item"><a href="/aboutMe.html">About Me</a></li>
-          <!-- <li class="nav-item"><a href="/Posts.html">Posts</a></li> -->
+          <li class="nav-item"><a href="/Posts.html">Posts</a></li>
+
           <!--Adding TITLE here helps you create TOOLTIP-->
           <li class="nav-item button"><a href="/Public/Social-Log/signIN.html">Login</a></li>
-          <li class="nav-item button Secondary"><a href="/Public/Social-Log/Registration/registration.html">Register</a></li>
+          <li class="nav-item button Secondary"><a href="/Public/Social-Log/Registration/registration.html">Register</a>
+          </li>
           <li class="toggle"><span class="bars"></span>Menu</li>
         </ul>
       </nav>
     </header>
 
+      <Div class="authContentClass" id="authContentId">
+        <h1>
+          Here you can post, photos, YouTube videos, or anything else!
+        </h1>
+      </Div>
 
-    <div class="container">
 
-        <div class="row">
-          <h2>Register with Social Media or Manually</h2>
-          <div class="vl">
-            <span class="vl-innertext">or</span>
-          </div>
-
-          <div class="col">
-            <a href="#" class="fb btn">
-              <i class="fa fa-facebook fa-fw"></i> Register with Facebook
-            </a>
-            <a href="#" class="twitter btn">
-              <i class="fa fa-twitter fa-fw"></i> Register with Twitter
-            </a>
-            <a href="#" class="google btn">
-              <i class="fa fa-google fa-fw"></i> Register with Google+
-            </a>
-          </div>
-
-          <div class="col">
-            <div class="hide-md-lg">
-              <p>Or register manually:</p>
-            </div>
-          
-            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Password Min 6 Char" required>
-            <div class="stage"></div>
-            <button class="btnGradient" onclick="register()"> Register</button>
-            </div>
-
-          </div>
-
-        </div>
-
-    </div>
-
-    <div class="bottom-container">
-      <div class="row">
-        <div class="col">
-          <a href="/Public/Social-Log/signIN.html" class="btn" >Login</a>
-        </div>
-        <div class="col">
-          <a href="#" class="btn">Forgot password?</a>
-        </div>
-      </div>
+    <div class="footerClass">
+      <footer>All Rights Reserved @2023</footer>
     </div>
   </body>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -107,5 +70,6 @@
     <!-- SweetAlert Script for nice popups https://sweetalert.js.org/-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Our script must be loaded after firebase references -->
-    <script src="script.js"></script>
+  <script src="/Public/Social-Log/Registration/script.js"></script>
+
 </html>

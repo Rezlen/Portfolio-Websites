@@ -7,72 +7,17 @@ body {
   
 }
 
-.nav-item1 img {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-}
-
-/** {
+* {
   border: red 0.25px dotted; 
+}
+
+h1 {
+  text-align: center;
+}
+
+/* #authContentId{
+  display: block;
 } */
-
-/*The Menu bar is place in menu.css file in css folder*/
-
-
-
-h2 {
-  text-align: center;
-}
-
-
-/*Puts Business Team Members section in order*/
-.BusinessTeam {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  background-color: rgb(241, 247, 235);
-  box-shadow: 0px 0px 10px;
-  margin: 2rem;
-}
-
-
-/*Limits the Team member images*/
-.BusinessTeam img {
-  height: 20rem;
-  width: auto;
-  margin: 0rem 1rem;
-  border-radius: 1rem;
-}
-
-/*========================To display the Map Iframe-Address- Contact Details*/
-.ContactDetails {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: auto;
-  width: auto;
-  margin: 2rem;
-  box-shadow: 0px 0px 10px;
-  background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
-    linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%); /*linear-gradient makes the colours beautiful */
-}
-
-.BusinessTeamContent {
- margin: 2rem;
-}
-
-.BusinessTeamContent ul li {
-  text-align: left;
-}
-
-.BusinessTeamContent ol li {
-  text-align: left;
-  font-weight: bold;
-}
-
-
 
 /*=======================From here Contact us FORM with the animation movement of PlaceHolder*/
 form {
@@ -152,7 +97,7 @@ form {
 }
 
 /*============================================Footer area with London's Image*/
-footer {
+.footerClass {
   display: flex;
   align-items: flex-start;
   background-image: url("../images/footer-copy.png");
@@ -161,20 +106,9 @@ footer {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
-footer {
-  font-size: 0.9rem;
-  margin: 0.5rem;
-}
 
-.ContactDetails p {
-  margin: 1rem;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
 
-iframe {
-  border-radius: 1rem;
-}
+
 
 /*For Mobile Display*/
 @media only screen and (max-width: 600px) {
@@ -205,11 +139,3 @@ iframe {
     flex-wrap: wrap;
   }
 }
-
-/*
-dig http://portfolio-projects.rezasoheily.co.uk/ +nostats +nocomments +nocmd
-    > ;http://portfolio-projects.rezasoheily.co.uk/.                     IN      A
-    > http://portfolio-projects.rezasoheily.co.uk/.              3592    IN      CNAME   rezlen.github.io.
-    > rezlen.github.io.      43192   IN      CNAME    GITHUB-PAGES-SERVER .
-    >  GITHUB-PAGES-SERVER .         22      IN      A       192.0.2.1
-*/

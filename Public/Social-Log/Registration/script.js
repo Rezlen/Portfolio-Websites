@@ -59,8 +59,17 @@ function register() {
       database_ref.child("users/" + user.uid).set(user_data);
 
       // Done. Instead of ALERT popup SweetAlert "swal" Has been used, 
-      swal({text: "Thank you, Your Account Created!!", icon: "success", timer: 3000 });
-    })
+      swal({ text: "Thank you, Your Account Created!!", icon: "success", timer: 2000 });
+      console.log(user_data) // checking the users success & data on console
+
+      function intervalFunction() { // function created only to create a delay for moving to the POSTS.html page so the SUCCESS alert/swal is visible well!
+        if (user) {
+          window.location = "/Posts.html"; //After successful login, user will be redirected to Posts.html
+        }
+      }
+      setInterval(intervalFunction, 2000);
+    }) 
+
     .catch(function (error) {
       // Firebase will use this to alert of its errors
       var error_code = error.code;
@@ -75,6 +84,7 @@ function login() {
   // Get all our input fields
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
+  postsDisplay = document.getElementById("authContentId");
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -100,19 +110,51 @@ function login() {
       // Push to Firebase Database
       database_ref.child("users/" + user.uid).update(user_data);
 
-      // DOne
-      swal({text: "You are Logged-In Now!!", icon: "success", timer: 3000})
+      // Done
+      swal({ text: "You are Logged-In Now!!", icon: "success", timer: 2000 });
+      console.log(user_data); // checking the users success & data on consol
+
+      function intervalFunction() {
+        // function created only to create a delay for moving to the POSTS.html page so the SUCCESS alert/swal is visible well!
+        if (user) {
+          window.location = "/Posts.html"; //After successful login, user will be redirected to Posts.html
+        }
+      }
+      setInterval(intervalFunction, 2000);
+
+      function test() {
+      auth.onAuthStateChanged(auth, user=> {
+        if (auth.user) {
+          postsDisplay.style.display = "none";
+          } else {
+          postsDisplay.style.display = "block";
+          }
+        });
+      }
+        test()
+
+
+
+
     })
+
     .catch(function (error) {
       // Firebase will use this to alert of its errors
       var error_code = error.code;
       var error_message = error.message;
 
-      swal(error_message, error_code);
+      alert(error_message, error_code);
     });
 }
 
-// Validate Functions
+//   postsDisplay = document.getElementById("authContentId");
+
+// // function getinnerHTML() {
+//   postsDisplay.style.display='none';
+// // }
+// // getinnerHTML()
+
+
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {
