@@ -64,7 +64,7 @@ function register() {
 
       function intervalFunction() { // function created only to create a delay for moving to the POSTS.html page so the SUCCESS alert/swal is visible well!
         if (user) {
-          window.location = "/Posts.html"; //After successful login, user will be redirected to Posts.html
+          window.location.replace = "/Posts.html"; //After successful login, user will be redirected to Posts.html
         }
       }
       setInterval(intervalFunction, 2000);
@@ -122,33 +122,29 @@ function login() {
       }
       setInterval(intervalFunction, 2000);
 
-      function test() {
-      auth.onAuthStateChanged(auth, user=> {
-        if (auth.user) {
-          postsDisplay.style.display = "none";
-          } else {
-          postsDisplay.style.display = "block";
-          }
-        });
-      }
-        test()
-
-
-
+      // function test() {
+      // auth.onAuthStateChanged(auth, user=> {
+      //   if (auth.user) {
+      //     postsDisplay.style.display = "none";
+      //     } else {
+      //     postsDisplay.style.display = "block";
+      //     }
+      //   });
+      // }
+      // test()
 
     })
-
     .catch(function (error) {
       // Firebase will use this to alert of its errors
       var error_code = error.code;
       var error_message = error.message;
 
       alert(error_message, error_code);
-    });
+    });  
 }
 
-//   postsDisplay = document.getElementById("authContentId");
 
+//   postsDisplay = document.getElementById("authContentId");
 // // function getinnerHTML() {
 //   postsDisplay.style.display='none';
 // // }

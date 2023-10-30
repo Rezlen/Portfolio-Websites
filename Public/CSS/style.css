@@ -72,7 +72,7 @@ body {
 
 .Projects4:hover {
   box-shadow: 0.5rem 0.5rem 1rem rgb(231, 157, 46);
-  animation: heartbeat 1.25s infinite;
+  animation: heartbeat 1s; /*infinite*/
 }
 
 
