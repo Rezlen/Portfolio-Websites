@@ -4,11 +4,23 @@ body {
   font-size: 16px;
   margin: 0;
   background-color: white;
-  
 }
-
+/* 
 * {
   border: red 0.25px dotted; 
+} */
+
+.postsDisplay{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.TopField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -26,7 +38,7 @@ form {
 
 .field {
   box-sizing: border-box;/**/
-  width: 20rem;
+  width: 25rem;
   height: 2.5rem; /*Changing the height of the fields*/
   margin: 0;
   padding: 1rem; /*Changing the TYPING PLACE padding inside the fields*/
@@ -42,7 +54,8 @@ form {
   pointer-events: none;
   line-height: 1.25em;
   margin: -2rem 2rem 1rem; /*Adjusts the placeholder word in middle of the field*/
-  width: 10rem;
+  width: 50%;
+
 }
 
 .field:focus {  /*Changing the border color*/
@@ -53,12 +66,15 @@ form {
   color: #00bafa;
   font-weight: bold;
   background-color: transparent;
+  border: solid 0.1rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
 }
 
 .field:focus + .label-field:before,
 .field:valid + .label-field:before {
   transition-duration: 0.2s; /*Adjust the placeholder's 'speed' moving up to it's field's line*/
-  transform: translate(0, -1.1rem) scale(0.9, 0.9); /*The SCALE, changes the placeholder 'word' height or width when moves on the field's line*/
+  transform: translate(0, -1.5rem) scale(0.9, 0.9); /*The SCALE, changes the placeholder 'word' height or width when moves on the field's line*/
 /*The TRANSLATE; adjust the amount of movement of the placeholder to go up/down; after entering a content.*/
 }
 
