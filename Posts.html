@@ -39,12 +39,12 @@
           <li class="nav-item" data-tooltip="See Project Portfolios Here"><a href="/portfolioProjects.html">Portfolio
               Projects</a></li>
           <li class="nav-item"><a href="/aboutMe.html">About Me</a></li>
-          <li class="nav-item"><a href="/Posts.html">Posts</a></li>
+          <li class="nav-item"><a href="/Posts.html">Members Posts</a></li>
 
           <!--Adding TITLE here helps you create TOOLTIP-->
-          <li class="nav-item button"><a href="/Public/Social-Log/signIN.html">Login</a></li>
-          <li class="nav-item button Secondary"><a href="/Public/Social-Log/Registration/registration.html">Register</a>
-          </li>
+          <li class="nav-item button" id="logOutbtn" onclick="logout()"> <a href="#">Log Out</a> </li>
+          <li class="nav-item button" id="logInbtn" ><a href="/Public/Social-Log/signIN.html">Login</a></li>
+          <li class="nav-item button Secondary" id="RegBTN" ><a href="/Public/Social-Log/Registration/registration.html">Register</a></li> 
           <li class="toggle"><span class="bars"></span>Menu</li>
         </ul>
       </nav>
@@ -55,6 +55,9 @@
           Here you can post, photos, YouTube videos, or anything else!
         </h1>
       </Div>
+      <div id="LogInWarning">
+        <h1>You Must Log In To See The Content!</h1>
+      </div>
 
 
     <div class="footerClass">

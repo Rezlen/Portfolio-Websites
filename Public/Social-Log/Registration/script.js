@@ -15,6 +15,12 @@ firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
 const database = firebase.database();
+const postsDisplay = document.getElementById("authContentId");
+const logOutbtn = document.getElementById("logOutbtn");
+const RegBTN = document.getElementById("RegBTN");
+const logInbtn = document.getElementById("logInbtn");
+const LogInWarning = document.getElementById("LogInWarning");
+const HideContent = document.getElementById("HideContent");
 
 ///////////////////////////////////Registration Section///////////////////////////////
 
@@ -53,6 +59,7 @@ function register() {
         firstName: firstName,
         lastName: lastName,
         last_login: Date.now(),
+        last_logout: Date.now(),
       };
 
       // Push to Firebase Database
@@ -84,7 +91,6 @@ function login() {
   // Get all our input fields
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
-  postsDisplay = document.getElementById("authContentId");
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -121,34 +127,48 @@ function login() {
         }
       }
       setInterval(intervalFunction, 2000);
-
-      // function test() {
-      // auth.onAuthStateChanged(auth, user=> {
-      //   if (auth.user) {
-      //     postsDisplay.style.display = "none";
-      //     } else {
-      //     postsDisplay.style.display = "block";
-      //     }
-      //   });
-      // }
-      // test()
-
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
       var error_code = error.code;
       var error_message = error.message;
 
+      // alert("you are not logged in rez");
+
       alert(error_message, error_code);
-    });  
+        postsDisplay.style.display = "none";
+    }); 
 }
 
+function logout() {
+  var user = auth.currentUser;
+  var database_ref = database.ref();
 
-//   postsDisplay = document.getElementById("authContentId");
-// // function getinnerHTML() {
-//   postsDisplay.style.display='none';
-// // }
-// // getinnerHTML()
+  var user_data = {
+    last_logout: Date.now(),
+  };
+
+  if (user) {
+    auth.signOut();
+    database_ref.child("users/" + user.uid).update(user_data);
+    swal({ text: "You are Logged-Out Now!!", icon: "success" });
+    window.location = "/Public/Social-Log/signIN.html";
+  }
+}
+
+// conditions for when user is/not logged in
+auth.onAuthStateChanged(function (user) {
+  if (user) {
+    logInbtn.style.display = "none";
+    RegBTN.style.display = "none";
+    LogInWarning.style.display = "none";
+    logOutbtn.style.display = "block";
+    HideContent.style.display = "none"; // why it is not hiding other pages content?
+  } else {
+    postsDisplay.style.display = "none";
+    logOutbtn.style.display = "none";
+  }
+});
 
 
 function validate_email(email) {
