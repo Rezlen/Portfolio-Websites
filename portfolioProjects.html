@@ -35,9 +35,9 @@
             <li class="nav-item" data-tooltip="See Project Portfolios Here" ><a href= "portfolioProjects.html" >Portfolio Projects</a></li>
             <li class="nav-item"><a href= "aboutMe.html">About Me</a></li> <!--Adding TITLE here helps you create TOOLTIP-->
             <li class="nav-item"><a href="/Posts.html">Members Posts</a></li>
-            
-            <li class="nav-item button"><a href= "/Public/Social-Log/signIN.html" >Login</a></li>          
-            <li class="nav-item button Secondary"><a href= "/Public/Social-Log/Registration/registration.html">Register</a></li>
+            <li class="nav-item button" id="logOutbtn" onclick="logout()"> <a href="#">Log Out</a> </li>
+            <li class="nav-item button" id="logInbtn" onclick="login()"><a href= "/Public/Social-Log/signIN.html" >Login</a></li>          
+            <li class="nav-item button Secondary" id="RegBTN"><a href= "/Public/Social-Log/Registration/registration.html">Register</a></li>
             <li class="toggle"><span class="bars"></span>Menu</li>
           </ul>
         </nav>
@@ -118,6 +118,17 @@
       </div>
     </body>
   <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <!-- SweetAlert Script for nice popups https://sweetalert.js.org/-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Our script must be loaded after firebase references -->
+    <script src="/Public/Social-Log/Registration/script.js"></script>
 </html>
 
 

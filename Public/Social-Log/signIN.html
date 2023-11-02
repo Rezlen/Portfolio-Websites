@@ -40,16 +40,16 @@
           <li class="nav-item"><a href="/aboutMe.html">About Me</a></li>
           <li class="nav-item"><a href="/Posts.html">Members Posts</a></li>
           <!--Adding TITLE here helps you create TOOLTIP-->
-          <li class="nav-item button" id="logOutbtn" onclick="logout()"> <a href="#">Log Out</a> </li>
-          <li class="nav-item button" id="logInbtn"><a href="/Public/Social-Log/signIN.html">Login</a></li>
+          <li class="nav-item button HideContent" id="logOutbtn" onclick="logout()"> <a href="#">Log Out</a> </li>
+          <li class="nav-item button" id="logInbtn" onclick="login()"><a href="/Public/Social-Log/signIN.html">Login</a></li>
           <li class="nav-item button Secondary" id="RegBTN"><a href="/Public/Social-Log/Registration/registration.html">Register</a></li>
           <li class="toggle"><span class="bars"></span>Menu</li>
         </ul>
       </nav>
     </header>
 
-
-    <div class="container" id="HideContent">
+    <div id="HideContent">
+      <div class="container postsDisplay" >
         <div class="row">
           <h2>Login with Social Media or Manually</h2>
           <div class="vl">
@@ -68,7 +68,7 @@
             </a>
           </div>
 
-          <div class="col">
+          <div class="col" class="HideContent" >
             <div class="hide-md-lg">
               <p>Or sign in manually:</p>
             </div>
@@ -79,15 +79,16 @@
           </div>
 
         </div>
-    </div>
+      </div>
 
-    <div class="bottom-container">
-      <div class="row">
-        <div class="col">
-          <a href="/Public/Social-Log/Registration/registration.html" class="btn" >Register</a>
-        </div>
-        <div class="col">
-          <a href="#" class="btn">Forgot password?</a>
+      <div class="bottom-container">
+        <div class="row">
+          <div class="col">
+            <a href="/Public/Social-Log/Registration/registration.html" class="btn" >Register</a>
+          </div>
+          <div class="col">
+            <a href="#" class="btn">Forgot password?</a>
+          </div>
         </div>
       </div>
     </div>

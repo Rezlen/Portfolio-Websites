@@ -15,13 +15,14 @@ firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
 const database = firebase.database();
-const postsDisplay = document.getElementById("authContentId");
+
+const postsDisplay = document.getElementById("postsDisplay");
 const logOutbtn = document.getElementById("logOutbtn");
 const RegBTN = document.getElementById("RegBTN");
 const logInbtn = document.getElementById("logInbtn");
 const LogInWarning = document.getElementById("LogInWarning");
+// const HideContent = document.getElementsByClassName("HideContent");
 const HideContent = document.getElementById("HideContent");
-
 ///////////////////////////////////Registration Section///////////////////////////////
 
 // Set up our register function
@@ -141,9 +142,8 @@ function login() {
 }
 
 function logout() {
-  var user = auth.currentUser;
   var database_ref = database.ref();
-
+  var user = auth.currentUser;
   var user_data = {
     last_logout: Date.now(),
   };
@@ -163,10 +163,29 @@ auth.onAuthStateChanged(function (user) {
     RegBTN.style.display = "none";
     LogInWarning.style.display = "none";
     logOutbtn.style.display = "block";
-    HideContent.style.display = "none"; // why it is not hiding other pages content?
+    // for (let i = 0; i < HideContent.length; i++){
+    //   HideContent[i].style.display = "none"; // why it is not hiding other pages content?
+    // }
+
+    // for (let element of document.getElementsByClassName("HideContent")) {
+    //   element.style.display = "none";
+    // }
   } else {
     postsDisplay.style.display = "none";
     logOutbtn.style.display = "none";
+  }
+});
+// hide the log out button if the user is not logged in
+auth.onAuthStateChanged(function (user) {
+  if (!user) {
+    logOutbtn.style.display = "none";
+  }
+});
+// hide the Registration & Login fields is the user is logged in already
+auth.onAuthStateChanged(function (user) {
+  if (user) {
+    HideContent.style.display = "none";
+    swal({ text: "You are already Logged In!!", icon: "success" });
   }
 });
 

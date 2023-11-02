@@ -30,6 +30,7 @@
   </head>
 
   <body>
+
     <header>
       <nav>
         <ul class="nav-list">
@@ -41,63 +42,61 @@
           <li class="nav-item"><a href="/Posts.html">Members Posts</a></li>
           <!--Adding TITLE here helps you create TOOLTIP-->
           <li class="nav-item button" id="logOutbtn" onclick="logout()"> <a href="#">Log Out</a> </li>
-          <li class="nav-item button" id="logInbtn"><a href="/Public/Social-Log/signIN.html">Login</a></li>
+          <li class="nav-item button" id="logInbtn" onclick="login()"><a href="/Public/Social-Log/signIN.html">Login</a></li>
           <li class="nav-item button Secondary" id="RegBTN"><a href="/Public/Social-Log/Registration/registration.html">Register</a></li>
           <li class="toggle"><span class="bars"></span>Menu</li>
         </ul>
       </nav>
     </header>
 
+    <div id="HideContent">
+      <div class="container">
 
-    <div class="container">
+          <div class="row">
+            <h2>Register with Social Media or Manually</h2>
+            <div class="vl">
+              <span class="vl-innertext">or</span>
+            </div>
 
+            <div class="col">
+              <a href="#" class="fb btn">
+                <i class="fa fa-facebook fa-fw"></i> Register with Facebook
+              </a>
+              <a href="#" class="twitter btn">
+                <i class="fa fa-twitter fa-fw"></i> Register with Twitter
+              </a>
+              <a href="#" class="google btn">
+                <i class="fa fa-google fa-fw"></i> Register with Google+
+              </a>
+            </div>
+
+            <div class="col HideContent" >
+              <div class="hide-md-lg">
+                <p>Or register manually:</p>
+              </div>
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+              <input type="email" id="email" name="email" placeholder="Email" required>
+              <input type="password" id="password" name="password" placeholder="Password Min 6 Char" required>
+              <div class="stage"></div>
+              <button class="btnGradient"  onclick="register()"> Register</button>
+            </div>
+
+          </div>
+
+      </div>
+
+      <div class="bottom-container">
         <div class="row">
-          <h2>Register with Social Media or Manually</h2>
-          <div class="vl">
-            <span class="vl-innertext">or</span>
-          </div>
-
           <div class="col">
-            <a href="#" class="fb btn">
-              <i class="fa fa-facebook fa-fw"></i> Register with Facebook
-            </a>
-            <a href="#" class="twitter btn">
-              <i class="fa fa-twitter fa-fw"></i> Register with Twitter
-            </a>
-            <a href="#" class="google btn">
-              <i class="fa fa-google fa-fw"></i> Register with Google+
-            </a>
+            <a href="/Public/Social-Log/signIN.html" class="btn" >Login</a>
           </div>
-
           <div class="col">
-            <div class="hide-md-lg">
-              <p>Or register manually:</p>
-            </div>
-          
-            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Password Min 6 Char" required>
-            <div class="stage"></div>
-            <button class="btnGradient" onclick="register()"> Register</button>
-            </div>
-
+            <a href="#" class="btn">Forgot password?</a>
           </div>
-
-        </div>
-
-    </div>
-
-    <div class="bottom-container">
-      <div class="row">
-        <div class="col">
-          <a href="/Public/Social-Log/signIN.html" class="btn" >Login</a>
-        </div>
-        <div class="col">
-          <a href="#" class="btn">Forgot password?</a>
         </div>
       </div>
-    </div>
+    </div> 
   </body>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
