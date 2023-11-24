@@ -13,6 +13,7 @@ var firebaseConfig = {
 // Initialize Firebase
 // firebase.analytics();
 firebase.initializeApp(firebaseConfig);
+// firebase.auth.Auth.Persistence.SESSION;
 
 // Initialize variables
 const auth = firebase.auth();
@@ -191,6 +192,17 @@ auth.onAuthStateChanged(function (user) {
   }
 });
 
+auth()
+  .revokeRefreshTokens(uid)
+  .then(() => {
+    return auth().getUser(uid);
+  })
+  .then((userRecord) => {
+    return new Date(userRecord.tokensValidAfterTime).getTime() / 100;
+  })
+  .then((timestamp) => {
+    console.log(`Tokens revoked at: ${timestamp}`);
+  });
 
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/;
