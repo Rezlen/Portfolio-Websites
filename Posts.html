@@ -12,8 +12,14 @@
     <link rel="stylesheet" type="text/css" href="/Public/CSS/buttons.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
     <link rel="shortcut icon" href="/Public/images/Rez-Pic.jpg" type="image/x-icon">
+    <!-- //connecting Python to this page by following two lines(Link & Script) -->
+    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
     <!--Start Script is for Mobile menu display-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script>
       // $(function() { ... }); is just jQuery short - hand for $(document).ready(function () { ... }); What it's designed to do (amongst other things) is ensure that your function is called once all the DOM elements of the page are ready to be used.
       $(function () {
@@ -57,15 +63,44 @@
         <div class="TexArea">
           <div class="TopField">
             <div class="TextAreANDlable">
-              <textarea class="field CommentFiled" required="yes" type="text" name="Comment field"></textarea>
+              <textarea class="field CommentFiled" id="CommentField" required="yes" type="text" name="Comment field"></textarea>
               <label class=" label-field" id="CommentLabel" alt="Comment Section" placeholder="What's In Your Mind?"></label>
             </div>
-            <button class="FormSubmitBTN btnGradient" type="submit">Submit</button>
+            <button class="FormSubmitBTN btnGradient" id="CommentFieldBTN" type="submit">Submit</button>
           </div>
         </div>
       </Div>
       <div id="LogInWarning">
-        <h1>You Must Log In To See The Content!</h1>
+        <h1>You Must Log In To See The Members Posts !</h1>
+      </div>
+
+      <!-- Python section in HTML using PyScript -->
+      <div>
+
+   
+
+        <h1>Polyglot 🦜 💬 🇬🇧 ➡️ 🏴‍☠️</h1>
+        <p>Translate English into Pirate speak...</p>
+        <input type="text" id="english" placeholder="Type English here..." />
+        <button py-click="translate_english">Translate</button>
+        <div id="output"></div>
+        <script type="py" src="./Public/PythonPost/main.py" config="./Public\PythonPost\pyscript.json"></script>
+        </script>
+        <!-- <script type="py" output="text">
+          from pyscript import display
+          from js import requestAnimationFrame, console
+          console.log('helooooo')
+          
+          text = 'testing'
+          x=4
+
+          display(
+            "Hello World!",
+            text,
+            x+2,
+          )
+        </script> -->
+   
       </div>
 
 

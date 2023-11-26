@@ -22,6 +22,7 @@ const auth = firebase.auth();
 const database = firebase.database();
 const postsDisplay = document.getElementById("postsDisplay");
 const logOutbtn = document.getElementById("logOutbtn");
+logOutbtn.style.display = "none";  // as defult, does not display the logout button so it can display it when is needed
 const RegBTN = document.getElementById("RegBTN");
 const logInbtn = document.getElementById("logInbtn");
 const LogInWarning = document.getElementById("LogInWarning");
@@ -37,7 +38,7 @@ const readableTimestamp = new Date(currentTimestamp).toISOString();
 function validateEmail(email) {
   return /^[^@]+@\w+(\.\w+)+\w$/.test(email);
 }
-
+  // Firebase only accepts lengths greater than 6
 function validatePassword(password) {
   return password.length >= 6;
 }
@@ -119,13 +120,12 @@ function login() {
       // Add this user login timeStamp, in a readable format to Firebase Database
       userRef.update({ last_login: readableTimestamp });
       swal({ text: "You are Logged-In Now!!", icon: "success", timer: 2000 });
-      console.log(user_data); // checking the users success & data on consol
       setTimeout(() => (window.location = "/Posts.html"), 2000);
     })
     .catch((error) => alert(error.message));
   // Firebase will use this to alert of its errors
 }
-
+  
 function logout() {
   const user = auth.currentUser;
   if (user) {
@@ -134,7 +134,7 @@ function logout() {
       .ref(`users/${user.uid}`)
       .update({ last_logout: readableTimestamp });
     swal({ text: "You are Logged-Out Now!!", icon: "success" });
-    window.location = "/Public/Social-Log/signIN.html";
+    setTimeout(() => (window.location = "/Public/Social-Log/signIN.html"), 2000);
   }
 }
 

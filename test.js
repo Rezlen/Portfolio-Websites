@@ -21,7 +21,6 @@ const auth = firebase.auth();
 const database = firebase.database();
 
 const postsDisplay = document.getElementById("postsDisplay");
-const logOutbtn = document.getElementById("logOutbtn");
 const RegBTN = document.getElementById("RegBTN");
 const logInbtn = document.getElementById("logInbtn");
 const LogInWarning = document.getElementById("LogInWarning");
