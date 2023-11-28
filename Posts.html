@@ -13,8 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:700" rel="stylesheet">
     <link rel="shortcut icon" href="/Public/images/Rez-Pic.jpg" type="image/x-icon">
     <!-- //connecting Python to this page by following two lines(Link & Script) -->
-    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
     <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
     <!--Start Script is for Mobile menu display-->
@@ -65,8 +63,9 @@
             <div class="TextAreANDlable">
               <textarea class="field CommentFiled" id="CommentField" required="yes" type="text" name="Comment field"></textarea>
               <label class=" label-field" id="CommentLabel" alt="Comment Section" placeholder="What's In Your Mind?"></label>
+              <div id="PostOutput"></div>
             </div>
-            <button class="FormSubmitBTN btnGradient" id="CommentFieldBTN" type="submit">Submit</button>
+            <button type="submit"  py-click="displayPosts"  id="CommentFieldBTN displayPosts" class="FormSubmitBTN btnGradient"  >Submit</button>
           </div>
         </div>
       </Div>
@@ -77,15 +76,13 @@
       <!-- Python section in HTML using PyScript -->
       <div>
 
-   
-
         <h1>Polyglot 🦜 💬 🇬🇧 ➡️ 🏴‍☠️</h1>
         <p>Translate English into Pirate speak...</p>
-        <input type="text" id="english" placeholder="Type English here..." />
+        <input type="text" id="typeEnglish" placeholder="Type English here..." />
         <button py-click="translate_english">Translate</button>
         <div id="output"></div>
         <script type="py" src="./Public/PythonPost/main.py" config="./Public\PythonPost\pyscript.json"></script>
-        </script>
+        
         <!-- <script type="py" output="text">
           from pyscript import display
           from js import requestAnimationFrame, console

@@ -17,6 +17,15 @@ https://moving-ts-particles.netlify.app/
 https://ts-particles-background.netlify.app
 
 
+Google Authentication has been used to Authenticate the members' emails.
+The website is hosted on Gitub but synchornised to Netlify to be displayied live. Because it has JS & database, it could not be displayied on GitHub alone.
+Now it is on Gtub but sinked with Netlify so it can be displayed PLUST free SSL & my own domain has been added through Netlify.
+
+The current database is FireBase NoSQL but iti is going to be changed to SQL & both database & codes be stored on Heroku because only Heroku allows hosting free DB as well.
+MySQL will be automatickally synced to my VS Code & on my Local PHPMyAdmin. 
+Xampp has been installed to handle PHPMyAdmin.
+Xampp has been installed NOT on my C drive but on D drive, that was a challenge as well since its defult PORT must be changed from 3306 to 3307 which I found out by hours of search.
+
 
 
 

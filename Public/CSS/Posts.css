@@ -138,6 +138,7 @@ form {
   div {
     display: flex;
     flex-direction: column;
+    border-color: red;
   }
 
   .ImageCoverHome {
