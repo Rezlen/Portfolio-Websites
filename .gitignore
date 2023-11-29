@@ -50,6 +50,8 @@ node_modules/
 # Optional npm cache directory
 .npm
 
+cred.env
+
 # Optional eslint cache
 .eslintcache
 
