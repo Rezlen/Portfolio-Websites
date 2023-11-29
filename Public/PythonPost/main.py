@@ -27,8 +27,8 @@ import MySQLdb
 # Connect to the database
 connection = MySQLdb.connect(
   host=os.getenv("aws.connect.psdb.cloud"),
-  user=os.getenv("kqppw0knmqo57dq66i0h"),
-  passwd=os.getenv("pscale_pw_9AVjqamDVhw4IhO2qrpkyLMU7NKHANJLu4Dtdyh38A"),
+  user=os.getenv("################"),
+  passwd=os.getenv("#####################"),
   db=os.getenv("portfoliowebsite"),
   autocommit=True,
   ssl_mode="VERIFY_IDENTITY",
